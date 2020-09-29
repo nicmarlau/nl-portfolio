@@ -90,6 +90,8 @@ textarea {
 /*******GLOBAL STYLES*******/
 html {
   box-sizing: border-box;
+  color: #2F4E5D;
+  background-color: #b6cdcf;
 }
 
 body {
@@ -97,25 +99,38 @@ body {
 }
 
 h1 {
-  font-size: 2.125em;
+  font-size: 2.25em;
+  font-family: 'Vidaloka', serif;
 }
 
 h2 {
-  font-size: 1.875em;
+  font-size: 2em;
   line-height: 1.125;
+  font-family: 'Vidaloka', serif;
 }
 
 h3 {
-  font-size: 1.5em;
+  font-size: 1.25em;
+  font-family: 'Open Sans', sans-serif;
 }
 
 h4 {
-  font-size: 1.125em;
+  font-size: 1.1em;
   font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
 }
 
 p {
   font-size: 1em;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+
+a {
+  font-size: 1em;
+  font-family: 'Open Sans', sans-serif;
+  color: #2F4E5D;
+  font-weight: 400;
 }
 
 ul, ol {
@@ -131,8 +146,8 @@ img {
 }
 
 .content-wrapper {
-  max-width: 300px;
   width: 90%;
+  max-width: 320px;
 }
 
 /*******HEADER, FOOTER STYLES*******/
@@ -147,8 +162,20 @@ header, footer {
 }
 
 header {
-  background-image: url('img/header-bg.jpg') center no-repeat;
+  background: url('../img/header-bg.jpg') center no-repeat;
   background-size: cover;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+header h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.5em;
+}
+
+footer {
+  background-color: #FEE5E4;
 }
 
 footer .footer-content-wrapper {
@@ -159,15 +186,40 @@ footer .footer-content-wrapper {
   text-align: center;
 }
 
-div .hire, .follow, .meet {
+div .hire, div .meet {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: column;
   text-align: center;
   width: 100%;
+  padding-bottom: 40px;
   }
 
+div .follow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: column;
+  text-align: center;
+  width: 100%;
+  padding-bottom: 40px;
+  }
+
+.social-icons {
+  display: flex;
+  flex-flow: row;
+  }
+
+footer h3 {
+  margin: 0;
+  padding-bottom: 5px
+}
+
+footer .social-icons p {
+  padding: 0 15px;
+  font-size: 2em;
+}
 
   /*******MAIN STYLES*******/
 
@@ -176,7 +228,6 @@ div .hire, .follow, .meet {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: lightyellow;
   }
 
   main .content-wrapper {
@@ -184,6 +235,7 @@ div .hire, .follow, .meet {
     justify-content: center;
     align-items: center;
     flex-flow: column wrap;
+    background-color: ;
   }
 
    /*******Portfolio Section*******/
@@ -192,32 +244,27 @@ div .hire, .follow, .meet {
     display: flex;
     justify-content: center;
     width: 100%;
-
   }
 
-  main .project-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-flow: column;
-    width: 100%;
-    margin: 0;
-    padding-bottom: 20px;
-  }
-
-  .project-image {
+  .projects {
+    background-color: #b6cdcf;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-flow: column;
+    flex-flow: column wrap;
+    width: 100%;
   }
 
-  .project-description {
+  .project-wrapper {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    flex-flow: column;
+    align-items: center;
+    flex-flow: row wrap;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 40px;
   }
+
 
   .project-description h3, h4, p {
     margin: 0;
@@ -225,30 +272,52 @@ div .hire, .follow, .meet {
 
   .project-description h3 {
     padding-top: 10px;
+    text-align: center;
   }
 
   .project-description h4 {
     padding-bottom: 10px;
+    text-align: center;
+    font-weight: 400;
   }
 
   .project-description p {
     font-style: italic;
+    width: 100%;
   }
 
   /*******About Me Section*******/
 
   .about-me {
-    background: dodgerblue;
     border-top: 1px #000 solid;
+    width: 100%;
+    padding-bottom: 40px;
   }
 
   .about-wrapper {
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    width: 100%;
   }
 
+  .about-wrapper h2 {
+    text-align: center;
+    width: 100%;
+  }
+
+
+
+  .about-me figure {
+    margin: 0;
+    padding-bottom: 10px;
+    width: 100%;
+  }
+
+  .about-content p {
+    width: 100%;
+  }
 
 
 /* ==========================================================================
@@ -339,8 +408,78 @@ div .hire, .follow, .meet {
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
+@media only screen and (min-width: 768px) {
+  .content-wrapper {
+    max-width: 640px;
+    }
+
+  .about-wrapper article {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .about-content {
+    width: 50%;
+    padding: 0 10px;
+  }
+
+  footer .footer-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-flow: row wrap;
+    text-align: center;
+    width: 100%;
+  }
+
+  div .hire, div .follow, div .meet {
+    padding-bottom: 40px;
+    width: 30%;
+  }
+
+  div .follow {
+    padding: 0 15px;
+    border-right: 1px solid #000;
+    border-left: 1px solid #000;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .content-wrapper {
+      max-width: 1080px;
+    }
+
+  .projects {
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-flow: row wrap;
+    width: 100%;
+  }
+
+  .project-wrapper {
+    flex-flow: row wrap;
+    width: 30%;
+  }
+
+  footer .footer-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-flow: row wrap;
+    text-align: center;
+    width: 100%;
+  }
+
+  div .hire, div .follow, div .meet {
+    padding-bottom: 40px;
+    width: 30%;
+  }
+
+  div .follow {
+    padding: 0 15px;
+    border-right: 1px solid #000;
+    border-left: 1px solid #000;
+  }
 }
 
 @media print,
