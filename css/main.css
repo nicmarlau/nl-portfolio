@@ -17,6 +17,26 @@ html {
   line-height: 1.4;
 }
 
+@font-face {
+  font-family: Carla Sans;
+  src: url('../fonts/carlasans.otf') format('opentype');
+}
+
+@font-face {
+  font-family: Carla Sans Bold;
+  src: url('../fonts/carlasansbold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: Carla Sans Light;
+  src: url('../fonts/carlasanslight.otf') format('opentype');
+}
+
+@font-face {
+  font-family: Carla Sans Semibold;
+  src: url('../fonts/carlasanssemibold.otf') format('opentype');
+}
+
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301
@@ -91,7 +111,6 @@ textarea {
 html {
   box-sizing: border-box;
   color: #2F4E5D;
-  background-color: #b6cdcf;
 }
 
 body {
@@ -100,23 +119,23 @@ body {
 
 h1 {
   font-size: 2.25em;
-  font-family: 'Vidaloka', serif;
+  font-family: 'Carla Sans Bold', serif;
 }
 
 h2 {
   font-size: 2em;
   line-height: 1.125;
-  font-family: 'Vidaloka', serif;
+  font-family: 'Carla Sans Semibold', serif;
 }
 
 h3 {
   font-size: 1.25em;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Carla Sans Semibold', sans-serif;
 }
 
 h4 {
   font-size: 1.1em;
-  font-weight: bold;
+  font-weight: lighter;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -161,21 +180,39 @@ header, footer {
   text-align: center;
 }
 
+header .content-wrapper {
+  width: 100%;
+}
+
 header {
-  background: url('../img/header-bg.jpg') center no-repeat;
-  background-size: cover;
+  background-color: #FEE5E4;
   padding: 20px;
   box-sizing: border-box;
 }
 
-header h2 {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
-  font-size: 1.5em;
+nav {
+  font-family: 'Carla Sans', sans-serif;
+  font-weight: 500;
+  font-size: 1em;
+  text-transform: uppercase;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  list-style: none;
+  padding: 5px 15px;
+  margin: 0;
 }
 
 footer {
   background-color: #FEE5E4;
+  padding-bottom: 40px;
 }
 
 footer .footer-content-wrapper {
@@ -184,6 +221,10 @@ footer .footer-content-wrapper {
   align-items: center;
   flex-flow: row wrap;
   text-align: center;
+}
+
+footer h1 {
+  padding: 30px 0;
 }
 
 div .hire, div .meet {
@@ -228,23 +269,10 @@ footer .social-icons p {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-
-  main .content-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: column wrap;
-    background-color: ;
+    flex-flow: row wrap;
   }
 
    /*******Portfolio Section*******/
-
-  main .portfolio-header {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
 
   .projects {
     background-color: #b6cdcf;
@@ -253,6 +281,14 @@ footer .social-icons p {
     align-items: center;
     flex-flow: column wrap;
     width: 100%;
+    padding: 30px 0;
+  }
+
+  .projects h2 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 20px;
   }
 
   .project-wrapper {
@@ -264,7 +300,6 @@ footer .social-icons p {
     margin: 0;
     padding-bottom: 40px;
   }
-
 
   .project-description h3, h4, p {
     margin: 0;
@@ -289,9 +324,13 @@ footer .social-icons p {
   /*******About Me Section*******/
 
   .about-me {
-    border-top: 1px #000 solid;
     width: 100%;
-    padding-bottom: 40px;
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+    background: #fff;
+    background: url('../img/header-bg.jpg') center no-repeat;
+    background-size: cover;
   }
 
   .about-wrapper {
@@ -300,11 +339,14 @@ footer .social-icons p {
     align-items: center;
     flex-flow: row wrap;
     width: 100%;
+    margin: 0;
+    padding-bottom: 40px;
   }
 
   .about-wrapper h2 {
     text-align: center;
     width: 100%;
+    padding-bottom: 20px;
   }
 
 
@@ -413,6 +455,45 @@ footer .social-icons p {
     max-width: 640px;
     }
 
+  header .content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav ul li {
+    padding: 0px 0px 0px 30px;
+  }
+
+  .projects {
+    padding-bottom: 40px;
+  }
+
+  .project-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: space-between;
+    padding: 20px 0;
+  }
+
+  .project-image {
+    width: 50%;
+  }
+
+  .project-description {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    box-sizing: border-box;
+    padding: 30px;
+  }
+
+  .project-reverse {
+    order: 2;
+  }
+
   .about-wrapper article {
     display: flex;
     justify-content: space-between;
@@ -433,14 +514,13 @@ footer .social-icons p {
   }
 
   div .hire, div .follow, div .meet {
+    box-sizing: border-box;
     padding-bottom: 40px;
-    width: 30%;
+    width: 33.3%;
   }
 
   div .follow {
     padding: 0 15px;
-    border-right: 1px solid #000;
-    border-left: 1px solid #000;
   }
 }
 
@@ -449,16 +529,36 @@ footer .social-icons p {
       max-width: 1080px;
     }
 
-  .projects {
+  .projects .content-wrapper {
+    display: flex;
     justify-content: space-between;
     align-items: flex-start;
     flex-flow: row wrap;
+    padding-bottom: 50px;
+  }
+
+  .projects h2 {
     width: 100%;
   }
 
   .project-wrapper {
-    flex-flow: row wrap;
-    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column wrap;
+    width: 26%;
+    padding: 0 30px;
+  }
+
+  .project-image {
+    width: 100%;
+  }
+
+  .project-description {
+    width: 100%;
+  }
+
+  .project-reverse {
+    order: 0;
   }
 
   footer .footer-content-wrapper {
@@ -477,8 +577,6 @@ footer .social-icons p {
 
   div .follow {
     padding: 0 15px;
-    border-right: 1px solid #000;
-    border-left: 1px solid #000;
   }
 }
 
